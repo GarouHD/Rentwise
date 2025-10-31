@@ -153,3 +153,6 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer',
     ] + $config);
 });
+
+require_once 'posttypes.php';
+require_once 'acf_json.php';
