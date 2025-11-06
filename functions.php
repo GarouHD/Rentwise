@@ -55,3 +55,7 @@ collect(['setup', 'filters', 'blocks'])
             wp_die(sprintf(__('Error locating <code>%s</code> for inclusion.', 'sage'), $file));
         }
     });
+
+    
+require_once get_theme_file_path('app/helpers.php');
+
