@@ -59,3 +59,15 @@ collect(['setup', 'filters', 'blocks'])
     
 require_once get_theme_file_path('app/helpers.php');
 
+function rentwise_register_acf_blocks() {
+    /**
+     * We register our block's with WordPress's handy
+     * register_block_type();
+     *
+     * @link https://developer.wordpress.org/reference/functions/register_block_type/
+     */
+    register_block_type(get_theme_file_path('resources/views/blocks/tenant-grid'));
+}
+// Here we call our tt3child_register_acf_block() function on init.
+add_action( 'init', 'rentwise_register_acf_blocks' );
+

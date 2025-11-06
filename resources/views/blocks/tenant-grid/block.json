@@ -9,7 +9,7 @@
   "keywords": ["tenant", "grid", "directory"],
   "acf": {
     "mode": "preview",
-    "renderTemplate": "resources/blocks/tenant-grid/view.blade.php"
+    "renderTemplate": "resources/views/blocks/render.php"
   },
   "supports": {
     "align": ["wide", "full"],
