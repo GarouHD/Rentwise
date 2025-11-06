@@ -58,3 +58,7 @@ collect(['setup', 'filters'])
             );
         }
     });
+
+    
+require_once get_theme_file_path('app/helpers.php');
+
