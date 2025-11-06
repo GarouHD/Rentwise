@@ -1,0 +1,28 @@
+{
+  "tailwindCSS.experimental.classRegex": [
+    ["class[\\s]*=[\\s]*[\"'`]([^\"'`]*)[\"'`]", "[\"'`]([^\"'`]*)[\"'`]"]
+  ],
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "blade": "html",
+    "php": "html"
+  },
+  "tailwindCSS.files.exclude": [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/.hg/**",
+    "**/.svn/**"
+  ],
+  "css.validate": true,
+  "tailwindCSS.validate": true,
+  "tailwindCSS.experimental.configFile": "resources/css/app.css",
+  "files.associations": {
+    "*.blade.php": "blade"
+  },
+  "[html]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    }
+  }
+}
+
