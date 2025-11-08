@@ -1,6 +1,6 @@
 @php
   // Get all tenants (TODO: make it user-specific later)
-  $tenants = lzmk_get_all_tenants();
+  $tenants = rentwise_get_all_tenants();
 @endphp
 
 <section class="tenant-grid-block my-8 bg-gray-100">
