@@ -1,29 +1,13 @@
 <?php
 
-/**
- * Register ACF custom blocks.
- */
-
-if (! function_exists('add_action')) {
-    return;
+function rentwise_register_acf_blocks() {
+    /**
+     * We register our block's with WordPress's handy
+     * register_block_type();
+     *
+     * @link https://developer.wordpress.org/reference/functions/register_block_type/
+     */
+    register_block_type(get_theme_file_path('resources/views/blocks/tenant-grid'));
 }
-
-add_action('acf/init', function () {
-    if (function_exists('acf_register_block_type')) {
-
-        acf_register_block_type([
-            'name'              => 'tenant-card',
-            'title'             => __('Tenant Card'),
-            'description'       => __('Reusable block showing tenant overview info.'),
-            'render_template'   => get_theme_file_path('/resources/views/blocks/tenant-card.blade.php'),
-            'category'          => 'formatting',
-            'icon'              => 'id', // WP dashicon
-            'keywords'          => ['tenant', 'card', 'profile'],
-            'mode'              => 'preview',
-            'supports'          => [
-                'align' => false,
-                'jsx'   => true,
-            ],
-        ]);
-    }
-});
+// Here we call our tt3child_register_acf_block() function on init.
+add_action( 'init', 'rentwise_register_acf_blocks' );
