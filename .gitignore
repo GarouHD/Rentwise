@@ -1,75 +1,22 @@
-# -------------------------------------
-# 🧱 WordPress / Sage / Node / Composer
-# -------------------------------------
-
-# Node dependencies
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Composer dependencies
-/vendor/
-
-# Build artifacts (Vite / Bud / Sage)
-public/build/
-public/hot
-/public/manifest.json
-/.cache/
-.cache-loader
-
-# Local environment files
+/node_modules
+/vendor
+/public/*
+!/public/.gitkeep
 .env
-.env.*
-.env.local
-*.local.php
+npm-debug.log
 
-# OS files
+# OS junk
 .DS_Store
 Thumbs.db
-Icon?
-ehthumbs.db
 
-# Editor / IDE files
-.vscode/
+# Editor folders
 .idea/
-*.swp
-*.swo
-*.swn
+.vscode/
 
-# Log files
-*.log
-
-# -------------------------------------
-# 🧩 WordPress-specific
-# -------------------------------------
-
-# Ignore common WP core folders (if inside full WP repo)
-wp-content/uploads/
+# Local WordPress caches
 wp-content/cache/
-wp-content/upgrade/
-wp-content/advanced-cache.php
-wp-content/object-cache.php
-wp-content/backups-dup-pro/
 
-# -------------------------------------
-# 🧠 ACF / Misc
-# -------------------------------------
-
-# Keep ACF JSON (we want to version-control this)
-# but only this folder and its contents.
-!resources/acf-json/
-
-# Ignore any compiled Blade cache
-/storage/framework/cache/
-storage/framework/views/
-
-# -------------------------------------
-# 🧰 Local by Flywheel
-# -------------------------------------
-*.sql
-*.tar.gz
-*.zip
-local-phpinfo.php
-app/sql/
-app/public/wp-content/uploads/
+# Config files
+vite.config.js
+package-lock.json
+package.json
