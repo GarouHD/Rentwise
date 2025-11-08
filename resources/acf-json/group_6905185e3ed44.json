@@ -130,6 +130,35 @@
             "mime_types": "",
             "allow_in_bindings": 0,
             "preview_size": "medium"
+        },
+        {
+            "key": "field_690d46804a212",
+            "label": "Landlord",
+            "name": "landlord",
+            "aria-label": "",
+            "type": "user",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": [
+                "landlord"
+            ],
+            "return_format": "array",
+            "multiple": 0,
+            "max": "",
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "bidirectional_target": [],
+            "min": ""
         }
     ],
     "location": [
@@ -157,5 +186,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1761943233
+    "modified": 1762477715
 }
