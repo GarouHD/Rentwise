@@ -17,7 +17,9 @@
         {{ __('Skip to content', 'sage') }}
       </a>
 
-      @include('sections.header')
+      @if (get_page_template_slug() !== 'template-landing.blade.php' && !is_404())
+        @include('sections.header')
+      @endif
 
       <main id="main" class="main">
         @yield('content')
@@ -29,7 +31,9 @@
         </aside>
       @endif
 
-      @include('sections.footer')
+      @if (!is_404())
+        @include('sections.footer')
+      @endif
     </div>
 
     @php(do_action('get_footer'))
