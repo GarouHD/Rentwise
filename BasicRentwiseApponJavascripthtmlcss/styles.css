@@ -1,0 +1,31 @@
+/* Custom styles for Rentwise Dashboard */
+
+body {
+    box-sizing: border-box;
+}
+
+.tenant-icon {
+    transition: all 0.3s ease;
+}
+
+.tenant-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.notification-badge {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        opacity: 1; 
+    }
+    50% { 
+        opacity: 0.7; 
+    }
+}
+
+.chart-bar {
+    transition: height 0.5s ease;
+}
