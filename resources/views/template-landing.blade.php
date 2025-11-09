@@ -19,10 +19,10 @@
           <span class="text-xl font-bold text-gray-900">Rentwise</span>
         </div>
         <div class="flex items-center gap-3">
-          <a href="{{ wp_login_url() }}" class="text-gray-600 hover:text-gray-900 font-medium px-4 py-2 transition-colors">
+          <a href="{{ home_url('/log-in') }}" class="text-gray-600 hover:text-gray-900 font-medium px-4 py-2 transition-colors">
             Log In
           </a>
-          <a href="{{ wp_registration_url() }}" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-lg transition-colors shadow-sm">
+          <a href="{{ home_url('/register-2') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-lg transition-colors shadow-sm">
             Sign Up
           </a>
         </div>
@@ -42,10 +42,10 @@
         Track tenants, manage payments, and stay organized—all from one simple dashboard.
       </p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="{{ wp_registration_url() }}" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-7 py-3 rounded-lg text-base transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+        <a href="{{ home_url('/register-2') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-7 py-3 rounded-lg text-base transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
           Get Started Free
         </a>
-        <a href="{{ wp_login_url() }}" class="bg-white hover:bg-gray-50 text-gray-900 font-semibold px-7 py-3 rounded-lg text-base border-2 border-gray-200 transition-all shadow-sm hover:shadow-md">
+        <a href="{{ home_url('/log-in') }}" class="bg-white hover:bg-gray-50 text-gray-900 font-semibold px-7 py-3 rounded-lg text-base border-2 border-gray-200 transition-all shadow-sm hover:shadow-md">
           Log In
         </a>
       </div>
