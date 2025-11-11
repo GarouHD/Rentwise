@@ -3,7 +3,7 @@
   $tenants = rentwise_get_all_tenants();
 @endphp
 
-<section class="tenant-grid-block my-8 bg-gray-100">
+<section class="my-8 px-6 py-4 bg-white rounded-xl shadow-lg">
   <h2 class="text-2xl font-semibold mb-6">Tenant Directory</h2>
 
   @if (!empty($tenants))

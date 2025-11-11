@@ -154,6 +154,13 @@ add_action('widgets_init', function () {
     ] + $config);
 });
 
+// disable dp header for non admin users
+add_action('after_setup_theme', function () {
+    if (!current_user_can('administrator')) {
+        show_admin_bar(false);
+    }
+});
+
 require_once 'posttypes.php';
 require_once 'acf_json.php';
 require_once 'kpi_card.php';

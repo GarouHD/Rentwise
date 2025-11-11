@@ -17,7 +17,7 @@
     }
   @endphp
 
-  <section class="container mx-auto px-4 py-8 space-y-8">
+  <section class="min-h-full px-20 py-8 space-y-8 bg-gradient-to-br from-blue-50 to-indigo-100">
 
     @include('components.Dashboard-header')
     @include('components.add-tenant-modal')
