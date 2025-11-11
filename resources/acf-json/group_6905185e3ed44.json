@@ -82,24 +82,24 @@
                 "id": ""
             },
             "choices": {
-                "Active": "Active",
-                "Inactive": "Inactive"
+                "active": "active",
+                "inactive": "inactive"
             },
-            "default_value": "Active",
+            "default_value": "active",
             "return_format": "value",
             "multiple": 0,
             "max": "",
-            "allow_custom": 0,
-            "placeholder": "",
-            "search_placeholder": "",
             "prepend": "",
             "append": "",
             "allow_null": 0,
             "allow_in_bindings": 0,
             "ui": 0,
             "ajax": 0,
+            "placeholder": "",
             "create_options": 0,
             "save_options": 0,
+            "allow_custom": 0,
+            "search_placeholder": "",
             "min": ""
         },
         {
@@ -186,5 +186,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1762477715
+    "modified": 1762899727
 }

@@ -22,8 +22,8 @@
 
   // Status color logic example (optional)
   $statusColor = match($status) {
-      'Active' => 'from-green-400 to-green-600',
-      'Inactive' => 'from-red-400 to-red-600',
+      'active' => 'from-green-400 to-green-600',
+      'inactive' => 'from-red-400 to-red-600',
       default => 'from-blue-400 to-blue-600'
   };
 @endphp

@@ -157,3 +157,4 @@ add_action('widgets_init', function () {
 require_once 'posttypes.php';
 require_once 'acf_json.php';
 require_once 'kpi_card.php';
+require_once 'add_tenant.php';

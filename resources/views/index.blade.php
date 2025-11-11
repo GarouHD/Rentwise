@@ -17,6 +17,8 @@
 
   <div class="text-red-400 font-bold text-5xl">Tailwind is working if this is red and bold</div>
   @include('blocks.tenant-grid.view')
+  @include('components.Dashboard-header')
+  @include('components.add-tenant-modal')
   
   {!! get_the_posts_navigation() !!}
 @endsection
