@@ -19,6 +19,7 @@
   @include('blocks.tenant-grid.view')
   @include('components.Dashboard-header')
   @include('components.add-tenant-modal')
+  @include('components.tenant-info-modal')
   
   {!! get_the_posts_navigation() !!}
 @endsection

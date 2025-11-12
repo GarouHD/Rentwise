@@ -6,7 +6,7 @@
     {{-- Header --}}
     <div class="flex items-center justify-between border-b border-slate-200 px-6 py-4">
       <h2 class="text-lg font-semibold text-slate-800">Add Tenant</h2>
-      <button type="button" onclick="hideAddTenant()" class="text-slate-500 hover:text-slate-700" id="closeModal">✕</button>
+      <button type="button" onclick="hideAddTenant()" class="text-slate-500 hover:text-red-600" id="closeModal">✕</button>
     </div>
 
     {{-- Form --}}
