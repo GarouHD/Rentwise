@@ -4,6 +4,8 @@
   'icon' => 'users',             // name of SVG in resources/views/svg/
   'textColor' => 'text-blue-600',// icon color
   'metric' => null,              // e.g. active_tenants, monthly_revenue
+  'clickable' => false,          // make the card clickable
+  'onClick' => null,             // JavaScript function to call on click
 ])
 
 @php
@@ -18,9 +20,15 @@
   } else {
       $formatted = $value ?? '—';
   }
+
+  // Build classes
+  $cardClasses = "bg-white rounded-xl p-6 shadow-lg";
+  if ($clickable) {
+      $cardClasses .= " cursor-pointer hover:shadow-xl transition-shadow";
+  }
 @endphp
 
-<div class="bg-white rounded-xl p-6 shadow-lg">
+<div class="{{ $cardClasses }}" @if($onClick) onclick="{{ $onClick }}" @endif>
   <div class="flex items-center">
     <div class="{{ $color }} p-3 rounded-full">
       <x-icon name="{{ $icon }}" class="w-6 h-6 {{ $textColor }}" />
