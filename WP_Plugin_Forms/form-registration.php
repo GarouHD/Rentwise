@@ -36,20 +36,14 @@ $plugin_url = plugins_url( '', dirname( dirname( __FILE__ ) ) );
 
 	<form action="<?php echo esc_url( $data->action ); ?>" method="post" id="wpum-submit-registration-form" enctype="multipart/form-data">
 
-		<!-- Name Field -->
-		<fieldset class="fieldset-first_name">
-			<label for="first_name">
-				<?php esc_html_e( 'Full Name', 'wp-user-manager' ); ?>
-				<span class="wpum-required">*</span>
-			</label>
-			<div class="field required-field">
-				<input type="text" name="first_name" id="first_name" value="<?php echo isset( $_POST['first_name'] ) ? esc_attr( $_POST['first_name'] ) : ''; ?>" required />
-			</div>
-		</fieldset>
-
 		<?php foreach ( $data->fields as $key => $field ) : ?>
 
 			<?php
+			// Skip first_name and last_name fields - only show fields configured in WPUM admin
+			if (in_array($key, ['first_name', 'last_name'], true)) {
+				continue;
+			}
+			
 			/**
 			 * Hook to render form field. Always use conditional check to
 			 * make sure the field type. Otherwise field would render multiple times.

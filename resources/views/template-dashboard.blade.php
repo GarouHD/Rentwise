@@ -21,6 +21,10 @@
 
     @include('components.Dashboard-header')
     @include('components.add-tenant-modal')
+    @include('components.edit-tenant-modal')
+    @include('components.add-property-modal')
+    @include('components.edit-property-modal')
+    @include('components.properties-list-modal')
 
     {{-- KPI row (Blade components) --}}
     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -51,6 +55,8 @@
         color="bg-sky-100"
         textColor="text-sky-700"
         metric="properties"
+        :clickable="true"
+        onClick="showPropertiesList()"
         />
     </div>
 

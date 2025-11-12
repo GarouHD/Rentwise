@@ -19,5 +19,14 @@ add_action('init', function() {
         'supports' => ['title'],
         'menu_icon' => 'dashicons-money-alt',
     ]);
+
+    register_post_type('property', [
+        'label' => 'Properties',
+        'public' => false,
+        'show_ui' => true,
+        'show_in_rest' => true,
+        'supports' => ['title', 'thumbnail'],
+        'menu_icon' => 'dashicons-building',
+    ]);
     
 });

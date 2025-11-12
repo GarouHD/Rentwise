@@ -58,3 +58,15 @@ collect(['setup', 'filters', 'blocks'])
 
     
 require_once get_theme_file_path('app/helpers.php');
+
+// Rentwise tenant management files
+require_once get_theme_file_path('app/add_tenant.php');
+require_once get_theme_file_path('app/get_tenant.php');
+require_once get_theme_file_path('app/update_tenant.php');
+require_once get_theme_file_path('app/delete_tenant.php');
+
+// Rentwise property management files
+require_once get_theme_file_path('app/add_property.php');
+require_once get_theme_file_path('app/get_property.php');
+require_once get_theme_file_path('app/update_property.php');
+require_once get_theme_file_path('app/delete_property.php');

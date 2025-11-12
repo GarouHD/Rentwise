@@ -42,11 +42,21 @@ function rentwise_kpi_overdue(): int {
     return 0;
 }
 
+function rentwise_kpi_properties(): int {
+  $landlord = rentwise_current_landlord_id(); if (!$landlord) return 0;
+  $q = new WP_Query([
+    'post_type' => 'property', 'post_status' => 'publish', 'fields' => 'ids', 'posts_per_page' => -1,
+    'meta_query' => [[ 'key'=>'landlord', 'value'=>$landlord, 'compare'=>'=' ]],
+  ]);
+  return (int) $q->found_posts;
+}
+
 function rentwise_kpi_value(string $metric) {
   return match ($metric) {
     'active_tenants'   => rentwise_kpi_active_tenants(),
     'monthly_revenue'  => rentwise_kpi_monthly_revenue(),
     'overdue_payments' => rentwise_kpi_overdue(),
+    'properties'       => rentwise_kpi_properties(),
     default            => 0,
   };
 }

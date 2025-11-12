@@ -1,8 +1,8 @@
 {{-- Add Tenant Modal Markup --}}
-<div class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/40 p-4" id="addTenantModal"
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4 transition-all duration-300" id="addTenantModal"
       onclick="if (event.target === this) hideAddTenant()"
 >
-  <div class="bg-white rounded-2xl shadow-xl w-full max-w-md sm:max-w-xl lg:max-w-2xl">
+  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-sm lg:max-w-md transform transition-all duration-300 scale-100">
     {{-- Header --}}
     <div class="flex items-center justify-between border-b border-slate-200 px-6 py-4">
       <h2 class="text-lg font-semibold text-slate-800">Add Tenant</h2>
@@ -50,12 +50,12 @@
       <div class="flex justify-end space-x-3 pt-2">
         <button type="button"
                 onclick="hideAddTenant()"
-                class="rounded-lg px-4 py-2 text-slate-700 hover:bg-slate-100"
+                class="rounded-lg px-4 py-2 text-slate-700 hover:bg-slate-100 bg-white border border-slate-300 font-medium transition"
                 id="cancelButton">
           Cancel
         </button>
         <button type="submit"
-                class="rounded-lg bg-indigo-600 px-5 py-2 text-white font-medium hover:bg-indigo-700 transition">
+                class="rounded-lg bg-indigo-600 px-5 py-2 text-white font-medium hover:bg-indigo-700 transition shadow-md">
           Save Tenant
         </button>
       </div>
@@ -67,7 +67,20 @@
     function hideAddTenant() {
         const modal = document.getElementById("addTenantModal");
         if (modal) {
-            modal.classList.add('hidden');
+            modal.style.opacity = '0';
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300); // Match the transition duration
         }
     }
 </script>
+<style>
+    #addTenantModal {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+    #addTenantModal.flex {
+        opacity: 1;
+    }
+</style>

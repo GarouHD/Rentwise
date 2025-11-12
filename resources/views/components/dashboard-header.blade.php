@@ -20,6 +20,11 @@
         const modal = document.getElementById("addTenantModal");
         if (modal) {
             modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            // Trigger animation after a brief delay
+            setTimeout(() => {
+                modal.style.opacity = '1';
+            }, 10);
         }
     }
 </script>
