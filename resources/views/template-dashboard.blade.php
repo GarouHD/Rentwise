@@ -24,6 +24,7 @@
     @include('components.edit-tenant-modal')
     @include('components.active-tenants-list-modal')
     @include('components.monthly-revenue-modal')
+    @include('components.overdue-payments-modal')
     @include('components.add-property-modal')
     @include('components.edit-property-modal')
     @include('components.properties-list-modal')
@@ -54,6 +55,8 @@
         color="bg-rose-100"
         textColor="text-rose-700"
         metric="overdue_payments"
+        :clickable="true"
+        onClick="showOverduePayments()"
         />
         <x-kpi-card
         title="Properties"
