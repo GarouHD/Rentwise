@@ -22,6 +22,7 @@
     @include('components.Dashboard-header')
     @include('components.add-tenant-modal')
     @include('components.edit-tenant-modal')
+    @include('components.active-tenants-list-modal')
     @include('components.add-property-modal')
     @include('components.edit-property-modal')
     @include('components.properties-list-modal')
@@ -34,6 +35,8 @@
         color="bg-emerald-100"
         textColor="text-emerald-700"
         metric="active_tenants"
+        :clickable="true"
+        onClick="showActiveTenantsList()"
         />
         <x-kpi-card
         title="Monthly Revenue"
