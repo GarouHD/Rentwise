@@ -154,7 +154,7 @@
 
             {{-- Monthly Revenue --}}
             <div class="text-center">
-              <div class="text-5xl font-bold text-purple-600 mb-2">${{{ number_format($total_revenue, 0) }}</div>
+              <div class="text-5xl font-bold text-purple-600 mb-2">${{ number_format($total_revenue, 0) }}</div>
               <div class="text-slate-600 font-medium">Monthly Revenue</div>
             </div>
 
