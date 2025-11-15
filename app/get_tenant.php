@@ -39,6 +39,7 @@ function rentwise_get_tenant_ajax() {
     'id' => $tenant_id,
     'name' => get_field('name', $tenant_id) ?: $tenant->post_title,
     'unit' => get_field('unit', $tenant_id) ?: '',
+    'property' => get_field('property', $tenant_id) ?: '',
     'rent_amount' => get_field('rent_amount', $tenant_id) ?: '',
     'status' => get_field('status', $tenant_id) ?: 'active',
   ];

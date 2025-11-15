@@ -33,10 +33,11 @@ function rentwise_handle_update_tenant() {
 
   // --- Inputs ---
   $tenant_id = isset($_POST['tenant_id']) ? intval($_POST['tenant_id']) : 0;
-  $name   = sanitize_text_field($_POST['tenant_name']  ?? '');
-  $unit   = sanitize_text_field($_POST['tenant_unit']  ?? '');
-  $rent   = isset($_POST['rent_amount']) ? (float) $_POST['rent_amount'] : 0.0;
-  $status = sanitize_text_field($_POST['tenant_status'] ?? 'active');
+  $name     = sanitize_text_field($_POST['tenant_name']     ?? '');
+  $unit     = sanitize_text_field($_POST['tenant_unit']     ?? '');
+  $property = sanitize_text_field($_POST['tenant_property'] ?? '');
+  $rent     = isset($_POST['rent_amount']) ? (float) $_POST['rent_amount'] : 0.0;
+  $status   = sanitize_text_field($_POST['tenant_status'] ?? 'active');
 
   if (!$tenant_id) {
     rentwise_redirect_back(['updated' => 0, 'reason' => 'missing_id']);
@@ -62,11 +63,30 @@ function rentwise_handle_update_tenant() {
     rentwise_redirect_back(['updated' => 0, 'reason' => 'update_error']);
   }
 
+  // --- Handle Property: Find or Create ---
+  $property_id = null;
+  if ($property !== '') {
+    // Use the same helper function from add_tenant.php
+    if (!function_exists('rentwise_find_or_create_property')) {
+      require_once __DIR__ . '/add_tenant.php';
+    }
+    $property_id = rentwise_find_or_create_property($property, $user->ID);
+  }
+
   // --- Update meta / ACF fields ---
   update_post_meta($tenant_id, 'name', $name);
   update_post_meta($tenant_id, 'unit', $unit);
   update_post_meta($tenant_id, 'rent_amount', $rent);
   update_post_meta($tenant_id, 'status', $status);
+  
+  if ($property_id) {
+    update_post_meta($tenant_id, 'property_id', $property_id);
+    update_post_meta($tenant_id, 'property', $property); // Store name for easy display
+  } elseif ($property === '') {
+    // Clear property if field is empty
+    delete_post_meta($tenant_id, 'property_id');
+    delete_post_meta($tenant_id, 'property');
+  }
 
   // --- Redirect back to dashboard ---
   rentwise_redirect_back(['updated' => 1, 'tenant' => $tenant_id]);

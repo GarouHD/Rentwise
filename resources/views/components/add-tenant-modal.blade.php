@@ -29,6 +29,15 @@
                class="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-800 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none">
       </div>
 
+      {{-- Property --}}
+      <div>
+        <label for="tenant_property" class="block text-sm font-medium text-slate-700 mb-1">Property Name</label>
+        <input type="text" id="tenant_property" name="tenant_property" 
+               placeholder="e.g. Sunset Apartments, 123 Main St"
+               class="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-800 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none">
+        <p class="text-xs text-slate-500 mt-1">Property will be auto-created if it doesn't exist</p>
+      </div>
+
       {{-- Rent Amount --}}
       <div>
         <label for="rent_amount" class="block text-sm font-medium text-slate-700 mb-1">Monthly Rent (USD)</label>

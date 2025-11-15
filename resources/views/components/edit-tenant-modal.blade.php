@@ -32,6 +32,13 @@
                 class="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-800 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none">
         </div>
 
+        {{-- Property --}}
+        <div>
+          <label for="edit_tenant_property" class="block text-sm font-medium text-slate-700 mb-1">Property Name</label>
+          <input type="text" id="edit_tenant_property" name="tenant_property"
+                class="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-800 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none">
+        </div>
+
         {{-- Rent Amount --}}
         <div>
           <label for="edit_rent_amount" class="block text-sm font-medium text-slate-700 mb-1">Monthly Rent (USD)</label>
@@ -122,6 +129,7 @@ function showTenantDetails(tenantId) {
                 document.getElementById('edit_tenant_id').value = tenantId;
                 document.getElementById('edit_tenant_name').value = tenant.name || '';
                 document.getElementById('edit_tenant_unit').value = tenant.unit || '';
+                document.getElementById('edit_tenant_property').value = tenant.property || '';
                 document.getElementById('edit_rent_amount').value = tenant.rent_amount || '';
                 document.getElementById('edit_tenant_status').value = tenant.status || 'active';
                 
