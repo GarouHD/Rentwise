@@ -13,11 +13,24 @@
         <span class="text-xl font-bold text-gray-900">Rentwise</span>
       </a>
 
-      <!-- RIGHT: Logout -->
-      <a href="{{ wp_logout_url(home_url()) }}"
-         class="text-sm text-gray-700 underline hover:text-gray-900 transition">
-        Logout
-      </a>
+      <!-- RIGHT: Auth Links -->
+      @if (is_user_logged_in())
+        <a href="{{ wp_logout_url(home_url()) }}"
+           class="text-sm text-gray-700 underline hover:text-gray-900 transition">
+          Logout
+        </a>
+      @else
+        <div class="flex items-center gap-4">
+          <a href="{{ home_url('/log-in') }}"
+             class="text-sm text-gray-700 hover:text-gray-900 transition">
+            Log In
+          </a>
+          <a href="{{ home_url('/register') }}"
+             class="text-sm bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+            Sign Up
+          </a>
+        </div>
+      @endif
 
     </div>
   </div>
