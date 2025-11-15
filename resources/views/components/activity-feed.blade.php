@@ -23,8 +23,8 @@
     {{-- Loop through each activity and display it as a card --}}
     @foreach ($activities as $activity)
       @php
-        {{-- Match activity color to Tailwind CSS classes --}}
-        {{-- This determines the background, text, and border colors for each activity card --}}
+        // {{-- Match activity color to Tailwind CSS classes --}}
+        // {{-- This determines the background, text, and border colors for each activity card --}}
         $color_classes = match($activity['color']) {
           'green' => 'bg-green-100 text-green-700 border-green-200',    // Green for payments (money in)
           'blue' => 'bg-blue-100 text-blue-700 border-blue-200',        // Blue for new tenants
