@@ -34,11 +34,11 @@
          rounded-xl p-4 text-white cursor-pointer relative transition hover:scale-105"
   onclick="showTenantDetails('{{ $id }}')"
 >
-  @if($notifications > 0)
+  {{-- @if($notifications > 0)
     <div class="notification-badge absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">
       {{ $notifications }}
     </div>
-  @endif
+  @endif --}}
 
   <div class="text-center">
     <div class="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2 overflow-hidden">

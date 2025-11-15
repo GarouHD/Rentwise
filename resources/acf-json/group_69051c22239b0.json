@@ -124,16 +124,14 @@
                 "id": ""
             },
             "choices": {
-                "Received": "Received",
-                "Overdue": "Overdue",
-                "Due soon": "Due soon"
+                "paid": "paid",
+                "overdue": "overdue",
+                "due": "due"
             },
             "default_value": false,
             "return_format": "value",
             "multiple": 0,
             "max": "",
-            "allow_custom": 0,
-            "search_placeholder": "",
             "prepend": "",
             "append": "",
             "allow_null": 0,
@@ -143,6 +141,8 @@
             "placeholder": "",
             "create_options": 0,
             "save_options": 0,
+            "allow_custom": 0,
+            "search_placeholder": "",
             "min": ""
         }
     ],
@@ -171,5 +171,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1761942915
+    "modified": 1763179483
 }

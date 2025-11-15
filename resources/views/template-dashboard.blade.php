@@ -28,6 +28,7 @@
     @include('components.add-property-modal')
     @include('components.edit-property-modal')
     @include('components.properties-list-modal')
+    @include('components.record-payment-modal')
 
     {{-- KPI row (Blade components) --}}
     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
