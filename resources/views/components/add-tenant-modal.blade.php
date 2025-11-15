@@ -78,7 +78,7 @@
         if (modal) {
             modal.style.opacity = '0';
             setTimeout(() => {
-                modal.classList.add('hidden');
+            modal.classList.add('hidden');
                 modal.classList.remove('flex');
             }, 300); // Match the transition duration
         }

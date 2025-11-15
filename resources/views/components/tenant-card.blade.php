@@ -3,6 +3,7 @@
 @props([
   'name' => '(No Name)',
   'unit' => '',
+  'property' => '',
   'rentAmount' => '',
   'status' => '',
   'avatar' => null,
@@ -50,6 +51,9 @@
     </div>
 
     <p class="font-semibold text-sm">{{ $name }}</p>
+    @if($property)
+      <p class="text-xs opacity-90 font-medium">📍 {{ $property }}</p>
+    @endif
     <p class="text-xs opacity-80">{{ $unit }}</p>
     <p class="text-xs opacity-80">${{ number_format((float)$rentAmount, 2) }}/mo</p>
   </div>

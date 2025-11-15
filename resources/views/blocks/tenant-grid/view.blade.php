@@ -11,11 +11,12 @@
       @foreach ($tenants as $tenant)
         @php
           // Get ACF fields for this tenant
-          $name   = get_field('name', $tenant->ID);
-          $unit   = get_field('unit', $tenant->ID);
-          $rent   = get_field('rent_amount', $tenant->ID);
-          $status = get_field('status', $tenant->ID);
-          $avatar = get_field('avatar', $tenant->ID);
+          $name     = get_field('name', $tenant->ID);
+          $unit     = get_field('unit', $tenant->ID);
+          $property = get_field('property', $tenant->ID);
+          $rent     = get_field('rent_amount', $tenant->ID);
+          $status   = get_field('status', $tenant->ID);
+          $avatar   = get_field('avatar', $tenant->ID);
         @endphp
 
         {{-- Render the tenant card component using local variables --}}
@@ -23,6 +24,7 @@
           :id="$tenant->ID"
           :name="$name"
           :unit="$unit"
+          :property="$property"
           :rentAmount="$rent"
           :status="$status"
           :avatar="$avatar"
