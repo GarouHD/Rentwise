@@ -2,7 +2,7 @@
 <div class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4 transition-all duration-300" id="addTenantModal"
       onclick="if (event.target === this) hideAddTenant()"
 >
-  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-sm lg:max-w-md transform transition-all duration-300 scale-100">
+  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-5xl max-h-[80vh] flex flex-col overflow-hidden transform transition-all duration-300 scale-100">
     {{-- Header --}}
     <div class="flex items-center justify-between border-b border-slate-200 px-6 py-4">
       <h2 class="text-lg font-semibold text-slate-800">Add Tenant</h2>
@@ -10,7 +10,7 @@
     </div>
 
     {{-- Form --}}
-    <form method="POST" action="{{ admin_url('admin-post.php') }}" class="p-6 space-y-5">
+    <form method="POST" action="{{ admin_url('admin-post.php') }}" class="p-6 space-y-5 flex-1 overflow-y-auto overscroll-contain min-h-0">
       {{-- Hidden inputs (for later wiring) --}}
       <input type="hidden" name="action" value="rentwise_add_tenant">
       <input type="hidden" name="_wpnonce" value="{{ wp_create_nonce('rentwise_add_tenant') }}">
