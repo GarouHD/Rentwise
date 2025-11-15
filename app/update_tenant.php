@@ -32,12 +32,14 @@ function rentwise_handle_update_tenant() {
   }
 
   // --- Inputs ---
-  $tenant_id = isset($_POST['tenant_id']) ? intval($_POST['tenant_id']) : 0;
-  $name     = sanitize_text_field($_POST['tenant_name']     ?? '');
-  $unit     = sanitize_text_field($_POST['tenant_unit']     ?? '');
-  $property = sanitize_text_field($_POST['tenant_property'] ?? '');
-  $rent     = isset($_POST['rent_amount']) ? (float) $_POST['rent_amount'] : 0.0;
-  $status   = sanitize_text_field($_POST['tenant_status'] ?? 'active');
+  $tenant_id   = isset($_POST['tenant_id']) ? intval($_POST['tenant_id']) : 0;
+  $name        = sanitize_text_field($_POST['tenant_name']       ?? '');
+  $unit        = sanitize_text_field($_POST['tenant_unit']       ?? '');
+  $property    = sanitize_text_field($_POST['tenant_property']   ?? '');
+  $rent        = isset($_POST['rent_amount']) ? (float) $_POST['rent_amount'] : 0.0;
+  $status      = sanitize_text_field($_POST['tenant_status']     ?? 'active');
+  $lease_start = sanitize_text_field($_POST['lease_start_date']  ?? '');
+  $lease_end   = sanitize_text_field($_POST['lease_end_date']    ?? '');
 
   if (!$tenant_id) {
     rentwise_redirect_back(['updated' => 0, 'reason' => 'missing_id']);
@@ -86,6 +88,19 @@ function rentwise_handle_update_tenant() {
     // Clear property if field is empty
     delete_post_meta($tenant_id, 'property_id');
     delete_post_meta($tenant_id, 'property');
+  }
+  
+  // Update lease dates
+  if ($lease_start) {
+    update_post_meta($tenant_id, 'lease_start_date', $lease_start);
+  } else {
+    delete_post_meta($tenant_id, 'lease_start_date');
+  }
+  
+  if ($lease_end) {
+    update_post_meta($tenant_id, 'lease_end_date', $lease_end);
+  } else {
+    delete_post_meta($tenant_id, 'lease_end_date');
   }
 
   // --- Redirect back to dashboard ---

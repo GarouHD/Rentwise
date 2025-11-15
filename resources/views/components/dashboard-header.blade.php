@@ -8,7 +8,10 @@
             <div class="bg-green-100 px-4 py-2 rounded-lg">
                 <span class="text-green-800 font-semibold">Total Balance: $0</span>
             </div>
-            <button onclick="showAddTenant()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
+            <button onclick="showExpensesList()" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition">
+                💸 Expenses
+            </button>
+            <button onclick="showAddTenant()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition">
                 + Add Tenant
             </button>
         </div>

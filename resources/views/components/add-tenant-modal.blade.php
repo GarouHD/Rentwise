@@ -55,6 +55,20 @@
         </select>
       </div>
 
+      {{-- Lease Start Date --}}
+      <div>
+        <label for="lease_start_date" class="block text-sm font-medium text-slate-700 mb-1">Lease Start Date</label>
+        <input type="date" id="lease_start_date" name="lease_start_date"
+               class="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-800 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none">
+      </div>
+
+      {{-- Lease End Date --}}
+      <div>
+        <label for="lease_end_date" class="block text-sm font-medium text-slate-700 mb-1">Lease End Date</label>
+        <input type="date" id="lease_end_date" name="lease_end_date"
+               class="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-800 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none">
+      </div>
+
       {{-- Actions --}}
       <div class="flex justify-end space-x-3 pt-2">
         <button type="button"

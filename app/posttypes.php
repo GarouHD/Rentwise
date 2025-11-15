@@ -28,5 +28,14 @@ add_action('init', function() {
         'supports' => ['title', 'thumbnail'],
         'menu_icon' => 'dashicons-building',
     ]);
+
+    register_post_type('expense', [
+        'label' => 'Expenses',
+        'public' => false,
+        'show_ui' => true,
+        'show_in_rest' => true,
+        'supports' => ['title'],
+        'menu_icon' => 'dashicons-cart',
+    ]);
     
 });

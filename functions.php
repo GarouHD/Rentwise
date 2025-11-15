@@ -70,3 +70,13 @@ require_once get_theme_file_path('app/add_property.php');
 require_once get_theme_file_path('app/get_property.php');
 require_once get_theme_file_path('app/update_property.php');
 require_once get_theme_file_path('app/delete_property.php');
+
+// Rentwise activity feed
+require_once get_theme_file_path('app/activity_feed.php');
+
+// Rentwise expense tracking
+require_once get_theme_file_path('app/expense_helpers.php');
+require_once get_theme_file_path('app/add_expense.php');
+require_once get_theme_file_path('app/get_expense.php');
+require_once get_theme_file_path('app/update_expense.php');
+require_once get_theme_file_path('app/delete_expense.php');

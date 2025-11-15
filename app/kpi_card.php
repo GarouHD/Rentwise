@@ -51,12 +51,28 @@ function rentwise_kpi_properties(): int {
   return (int) $q->found_posts;
 }
 
+function rentwise_kpi_monthly_expenses(): float {
+  $landlord = rentwise_current_landlord_id(); if (!$landlord) return 0;
+  // Get expenses from current month
+  $start_date = date('Y-m-01');
+  $end_date = date('Y-m-t');
+  return rentwise_get_total_expenses(null, $start_date, $end_date);
+}
+
+function rentwise_kpi_net_profit(): float {
+  $revenue = rentwise_kpi_monthly_revenue();
+  $expenses = rentwise_kpi_monthly_expenses();
+  return $revenue - $expenses;
+}
+
 function rentwise_kpi_value(string $metric) {
   return match ($metric) {
     'active_tenants'   => rentwise_kpi_active_tenants(),
     'monthly_revenue'  => rentwise_kpi_monthly_revenue(),
     'overdue_payments' => rentwise_kpi_overdue(),
     'properties'       => rentwise_kpi_properties(),
+    'monthly_expenses' => rentwise_kpi_monthly_expenses(),
+    'net_profit'       => rentwise_kpi_net_profit(),
     default            => 0,
   };
 }

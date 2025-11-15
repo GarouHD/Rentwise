@@ -29,9 +29,12 @@
     @include('components.edit-property-modal')
     @include('components.properties-list-modal')
     @include('components.record-payment-modal')
+    @include('components.add-expense-modal')
+    @include('components.edit-expense-modal')
+    @include('components.expenses-list-modal')
 
     {{-- KPI row (Blade components) --}}
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-5 mb-8">
         <x-kpi-card
         title="Active Tenants"
         icon="users"
@@ -68,6 +71,15 @@
         :clickable="true"
         onClick="showPropertiesList()"
         />
+        <x-kpi-card
+        title="Net Profit"
+        icon="dollar"
+        color="bg-green-100"
+        textColor="text-green-700"
+        metric="net_profit"
+        :clickable="true"
+        onClick="showExpensesList()"
+        />
     </div>
 
     {{-- Editor-managed content (ACF blocks, e.g., Tenant Directory) --}}
@@ -76,6 +88,9 @@
             @php(the_content()) 
         </div>
     @endwhile
+
+    {{-- Activity Feed --}}
+    @include('components.activity-feed')
 
   </section>
 

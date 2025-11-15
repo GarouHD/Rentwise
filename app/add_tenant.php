@@ -33,11 +33,13 @@ function rentwise_handle_add_tenant() {
   }
 
   // --- Inputs ---
-  $name     = sanitize_text_field($_POST['tenant_name']     ?? '');
-  $unit     = sanitize_text_field($_POST['tenant_unit']     ?? '');
-  $property = sanitize_text_field($_POST['tenant_property'] ?? '');
-  $rent     = isset($_POST['rent_amount']) ? (float) $_POST['rent_amount'] : 0.0;
-  $status   = sanitize_text_field($_POST['tenant_status'] ?? 'active');
+  $name            = sanitize_text_field($_POST['tenant_name']       ?? '');
+  $unit            = sanitize_text_field($_POST['tenant_unit']       ?? '');
+  $property        = sanitize_text_field($_POST['tenant_property']   ?? '');
+  $rent            = isset($_POST['rent_amount']) ? (float) $_POST['rent_amount'] : 0.0;
+  $status          = sanitize_text_field($_POST['tenant_status']     ?? 'active');
+  $lease_start     = sanitize_text_field($_POST['lease_start_date']  ?? '');
+  $lease_end       = sanitize_text_field($_POST['lease_end_date']    ?? '');
 
   if ($name === '') {
     rentwise_redirect_back(['added' => 0, 'reason' => 'missing_name']);
@@ -70,6 +72,14 @@ function rentwise_handle_add_tenant() {
   if ($property_id) {
     update_post_meta($tenant_id, 'property_id', $property_id);
     update_post_meta($tenant_id, 'property', $property); // Store name for easy display
+  }
+  
+  // Save lease dates if provided
+  if ($lease_start) {
+    update_post_meta($tenant_id, 'lease_start_date', $lease_start);
+  }
+  if ($lease_end) {
+    update_post_meta($tenant_id, 'lease_end_date', $lease_end);
   }
 
   // --- Redirect back to dashboard (page reload so ACF block re-renders) ---

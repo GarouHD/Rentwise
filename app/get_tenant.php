@@ -42,6 +42,8 @@ function rentwise_get_tenant_ajax() {
     'property' => get_field('property', $tenant_id) ?: '',
     'rent_amount' => get_field('rent_amount', $tenant_id) ?: '',
     'status' => get_field('status', $tenant_id) ?: 'active',
+    'lease_start_date' => get_field('lease_start_date', $tenant_id) ?: '',
+    'lease_end_date' => get_field('lease_end_date', $tenant_id) ?: '',
   ];
 
   wp_send_json_success($data);
