@@ -19,7 +19,7 @@
 
   <section class="min-h-full px-20 py-8 space-y-8 bg-gradient-to-br from-blue-50 to-indigo-100">
 
-    @include('components.Dashboard-header')
+    @include('components.dashboard-header')
     @include('components.add-tenant-modal')
     @include('components.edit-tenant-modal')
     @include('components.active-tenants-list-modal')
