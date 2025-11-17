@@ -68,7 +68,7 @@ function rentwise_handle_add_tenant() {
   update_post_meta($tenant_id, 'unit', $unit);
   update_post_meta($tenant_id, 'rent_amount', $rent);
   update_post_meta($tenant_id, 'status', $status);
-  
+
   if ($property_id) {
     update_post_meta($tenant_id, 'property_id', $property_id);
     update_post_meta($tenant_id, 'property', $property); // Store name for easy display

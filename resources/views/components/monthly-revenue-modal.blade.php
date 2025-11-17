@@ -4,16 +4,16 @@
 >
   <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl transform transition-all duration-300 scale-100 max-h-[90vh] flex flex-col">
     {{-- Header --}}
-    <div class="flex items-center justify-between border-b border-slate-200 px-6 py-4">
+    <div class="flex items-center justify-between border-b border-slate-200 px-4 sm:px-6 py-3 sm:py-4 gap-2">
       <div>
-        <h2 class="text-lg font-semibold text-slate-800">Monthly Revenue Breakdown</h2>
-        <p class="text-sm text-slate-500 mt-1">Total revenue from all active tenants</p>
+        <h2 class="text-base sm:text-lg font-semibold text-slate-800">Monthly Revenue Breakdown</h2>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">Total revenue from all active tenants</p>
       </div>
-      <button type="button" onclick="hideMonthlyRevenue()" class="text-slate-500 hover:text-slate-700">✕</button>
+      <button type="button" onclick="hideMonthlyRevenue()" class="text-slate-500 hover:text-slate-700 text-xl flex-shrink-0">✕</button>
     </div>
 
     {{-- Revenue Breakdown --}}
-    <div class="p-6 overflow-y-auto">
+    <div class="p-4 sm:p-6 overflow-y-auto">
       @php
         // Get all tenants for the current landlord
         $tenants = rentwise_get_all_tenants();

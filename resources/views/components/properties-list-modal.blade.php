@@ -4,13 +4,13 @@
 >
   <div class="bg-white rounded-2xl shadow-2xl w-full max-w-7xl transform transition-all duration-300 scale-100 max-h-[90vh] flex flex-col">
     {{-- Header --}}
-    <div class="flex items-center justify-between border-b border-slate-200 px-6 py-4">
-      <h2 class="text-2xl font-bold text-slate-900">Property Portfolio</h2>
+    <div class="flex items-center justify-between border-b border-slate-200 px-4 sm:px-6 py-3 sm:py-4">
+      <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Property Portfolio</h2>
       <button type="button" onclick="hidePropertiesList()" class="text-slate-500 hover:text-slate-700 text-2xl">✕</button>
     </div>
 
     {{-- Properties Grid --}}
-    <div class="p-6 overflow-y-auto">
+    <div class="p-4 sm:p-6 overflow-y-auto">
       @php
         // Get all properties for the current landlord
         $properties = rentwise_get_all_properties();
@@ -34,7 +34,7 @@
 
       @if (!empty($properties))
         {{-- Property Cards Grid --}}
-        <div class="grid gap-6 grid-cols-1 lg:grid-cols-3 mb-8">
+        <div class="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-6 sm:mb-8">
           @foreach ($properties as $index => $property)
             @php
               $color = $colors[$index % count($colors)];

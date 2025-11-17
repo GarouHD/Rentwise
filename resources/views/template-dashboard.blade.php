@@ -17,7 +17,7 @@
     }
   @endphp
 
-  <section class="min-h-full px-20 py-8 space-y-8 bg-gradient-to-br from-blue-50 to-indigo-100">
+  <section class="min-h-full px-4 sm:px-6 md:px-12 lg:px-20 py-4 sm:py-6 md:py-8 space-y-4 sm:space-y-6 md:space-y-8 bg-gradient-to-br from-blue-50 to-indigo-100">
 
     @include('components.dashboard-header')
     @include('components.add-tenant-modal')
@@ -34,7 +34,7 @@
     @include('components.expenses-list-modal')
 
     {{-- KPI row (Blade components) --}}
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4 mb-8">
+    <div class="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mb-4 sm:mb-6 md:mb-8">
         <x-kpi-card
         title="Active Tenants"
         icon="users"

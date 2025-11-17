@@ -3,11 +3,11 @@
   $tenants = rentwise_get_all_tenants();
 @endphp
 
-<section class="my-8 px-6 py-4 bg-white rounded-xl shadow-lg">
-  <h2 class="text-2xl font-semibold mb-6">Tenant Directory</h2>
+<section class="my-4 sm:my-6 md:my-8 px-4 sm:px-6 py-4 bg-white rounded-xl shadow-lg">
+  <h2 class="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">Tenant Directory</h2>
 
   @if (!empty($tenants))
-    <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
       @foreach ($tenants as $tenant)
         @php
           // Get ACF fields for this tenant

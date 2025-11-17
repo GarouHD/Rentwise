@@ -4,19 +4,19 @@
 >
   <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl transform transition-all duration-300 scale-100 max-h-[90vh] flex flex-col">
     {{-- Header --}}
-    <div class="flex items-center justify-between border-b border-slate-200 px-6 py-4">
-      <h2 class="text-lg font-semibold text-slate-800">Active Tenants</h2>
-      <div class="flex items-center gap-3">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-slate-200 px-4 sm:px-6 py-3 sm:py-4 gap-2 sm:gap-3">
+      <h2 class="text-base sm:text-lg font-semibold text-slate-800">Active Tenants</h2>
+      <div class="flex items-center gap-2 sm:gap-3">
         <button type="button" onclick="showAddTenant()" 
-                class="rounded-lg bg-indigo-600 px-4 py-2 text-white text-sm font-medium hover:bg-indigo-700 transition shadow-md">
+                class="rounded-lg bg-indigo-600 px-3 sm:px-4 py-2 text-white text-xs sm:text-sm font-medium hover:bg-indigo-700 transition shadow-md whitespace-nowrap">
           + Add Tenant
         </button>
-        <button type="button" onclick="hideActiveTenantsList()" class="text-slate-500 hover:text-slate-700">✕</button>
+        <button type="button" onclick="hideActiveTenantsList()" class="text-slate-500 hover:text-slate-700 text-xl">✕</button>
       </div>
     </div>
 
     {{-- Tenants List --}}
-    <div class="p-6 overflow-y-auto">
+    <div class="p-4 sm:p-6 overflow-y-auto">
       @php
         // Get all tenants for the current landlord
         $tenants = rentwise_get_all_tenants();

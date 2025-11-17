@@ -4,16 +4,16 @@
   <div class="bg-white rounded-2xl shadow-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden flex flex-col">
     
     {{-- Header --}}
-    <div class="flex items-center justify-between border-b border-slate-200 px-6 py-4 bg-gradient-to-r from-red-50 to-orange-50">
+    <div class="flex items-center justify-between border-b border-slate-200 px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-red-50 to-orange-50 gap-2">
       <div>
-        <h2 class="text-2xl font-bold text-slate-800">💸 Expense Tracking</h2>
-        <p class="text-sm text-slate-600 mt-1">Manage all your property expenses</p>
+        <h2 class="text-lg sm:text-2xl font-bold text-slate-800">💸 Expense Tracking</h2>
+        <p class="text-xs sm:text-sm text-slate-600 mt-1">Manage all your property expenses</p>
       </div>
-      <button type="button" onclick="hideExpensesList()" class="text-slate-500 hover:text-slate-700 text-2xl">✕</button>
+      <button type="button" onclick="hideExpensesList()" class="text-slate-500 hover:text-slate-700 text-xl sm:text-2xl flex-shrink-0">✕</button>
     </div>
 
     {{-- Content --}}
-    <div class="flex-1 overflow-y-auto p-6">
+    <div class="flex-1 overflow-y-auto p-4 sm:p-6">
       @php
         $expenses = rentwise_get_all_expenses();
         $total_expenses = 0;

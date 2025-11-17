@@ -11,11 +11,11 @@
 {{-- Only show activity feed if there are activities to display --}}
 @if (!empty($activities))
 {{-- Main container: white card with rounded corners and shadow --}}
-<section class="mb-8 px-6 py-6 bg-white rounded-xl shadow-lg">
+<section class="mb-4 sm:mb-6 md:mb-8 px-4 sm:px-6 py-4 sm:py-6 bg-white rounded-xl shadow-lg">
   {{-- Header section with title and date range indicator --}}
-  <div class="flex items-center justify-between mb-6">
-    <h2 class="text-2xl font-semibold text-slate-800">Recent Activity</h2>
-    <span class="text-sm text-slate-500">Last 30 days</span>
+  <div class="flex items-center justify-between mb-4 sm:mb-6">
+    <h2 class="text-xl sm:text-2xl font-semibold text-slate-800">Recent Activity</h2>
+    <span class="text-xs sm:text-sm text-slate-500">Last 30 days</span>
   </div>
 
   {{-- Activities list container with vertical spacing between items --}}
