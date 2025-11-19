@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
-    <link rel="alternate icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+    <link rel="alterwnate icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
     @php(do_action('get_header'))
     @php(wp_head())
 
