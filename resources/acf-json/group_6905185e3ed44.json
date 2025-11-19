@@ -136,7 +136,7 @@
             "label": "Landlord",
             "name": "landlord",
             "aria-label": "",
-            "type": "post_object",
+            "type": "user",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -145,27 +145,17 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "landlord"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "return_format": "object",
+            "role": "",
+            "return_format": "array",
             "multiple": 0,
             "max": "",
-            "save_custom": 0,
-            "save_post_status": "publish",
-            "acfe_add_post": 0,
-            "acfe_edit_post": 0,
             "acfe_bidirectional": {
                 "acfe_bidirectional_enabled": "0"
             },
             "allow_null": 0,
             "allow_in_bindings": 0,
             "bidirectional": 0,
-            "ui": 1,
             "bidirectional_target": [],
-            "save_post_type": "",
             "min": ""
         },
         {
@@ -263,5 +253,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1763222251
+    "modified": 1763515277
 }
