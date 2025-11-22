@@ -1,17 +1,17 @@
-<header class="bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-4 sm:mb-6 md:mb-8">
-    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<header class="bg-white rounded-xl shadow-lg p-6 mb-8">
+    <div class="flex justify-between items-center">
         <div>
-            <h1 class="text-2xl sm:text-3xl font-bold text-gray-800">Rentwise</h1>
-            <p class="text-sm sm:text-base text-gray-600">Property Management Dashboard</p>
+            <h1 class="text-3xl font-bold text-gray-800">Rentwise</h1>
+            <p class="text-gray-600">Property Management Dashboard</p>
         </div>
-        <div class="flex flex-wrap items-center gap-2 sm:gap-3 w-full sm:w-auto">
-            <div class="bg-green-100 px-3 py-2 rounded-lg flex-shrink-0">
-                <span class="text-green-800 font-semibold text-sm sm:text-base">Total Balance: $0</span>
+        <div class="flex items-center space-x-4">
+            <div class="bg-green-100 px-4 py-2 rounded-lg">
+                <span class="text-green-800 font-semibold">Total Balance: $0</span>
             </div>
-            <button onclick="showExpensesList()" class="bg-red-600 hover:bg-red-700 text-white px-3 sm:px-4 py-2 rounded-lg transition text-sm sm:text-base flex-shrink-0">
+            <button onclick="showExpensesList()" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition">
                 💸 Expenses
             </button>
-            <button onclick="showAddTenant()" class="bg-blue-600 hover:bg-blue-700 text-white px-3 sm:px-4 py-2 rounded-lg transition text-sm sm:text-base flex-shrink-0">
+            <button onclick="showAddTenant()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition">
                 + Add Tenant
             </button>
         </div>

@@ -15,10 +15,15 @@
 
       <!-- RIGHT: Auth Links -->
       @if (is_user_logged_in())
-        <a href="{{ wp_logout_url(home_url()) }}"
-           class="text-sm text-gray-700 underline hover:text-gray-900 transition">
-          Logout
-        </a>
+        <div class="flex items-center gap-3">
+          <span class="text-sm text-gray-600">
+            Signed in as <span class="font-semibold text-gray-800">{{ wp_get_current_user()->display_name }}</span>
+          </span>
+          <a href="{{ wp_logout_url(home_url()) }}"
+             class="text-sm text-gray-700 underline hover:text-gray-900 transition">
+            Logout
+          </a>
+        </div>
       @else
         <div class="flex items-center gap-4">
           <a href="{{ home_url('/log-in') }}"
