@@ -82,6 +82,10 @@ function rentwise_handle_record_payment() {
     update_post_meta($payment_id, 'status', $status);      // 'paid' or 'overdue'
     update_post_meta($payment_id, 'amount', $amount);      // numeric
     update_post_meta($payment_id, 'paid_on', $paid_on);    // YYYY-MM-DD
+    
+    // Payment method (default to 'manual' for manually recorded payments)
+    $payment_method = isset($_POST['payment_method']) ? sanitize_text_field($_POST['payment_method']) : 'manual';
+    update_post_meta($payment_id, 'payment_method', $payment_method);
 
     // 7. Redirect back (dashboard or referrer) with success flag
     $redirect = wp_get_referer();
