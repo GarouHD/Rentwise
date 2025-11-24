@@ -40,5 +40,11 @@
 
     @php(do_action('get_footer'))
     @php(wp_footer())
+    
+    @if (is_user_logged_in())
+      @include('components.user-profile-modal')
+    @endif
+    
+    @stack('scripts')
   </body>
 </html>
